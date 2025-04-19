@@ -15,6 +15,8 @@ sttptime-back:
 sttptime-front:
 	@echo ==== COMPILING STTPTIME FRONTEND ====
 	@$(foreach file, $(wildcard frontend/*.cpp), $(CC) $(CFLAGS_FRONTEND) -c $(file) -o obj/frontend/$(basename $(notdir $(file))).o; echo CC $(file);)
+	@echo RC frontend-gui.rc
+	@windres frontend/frontend-gui.rc -Iinclude/ -o obj/frontend/gui.o
 	@g++ $(CFLAGS_FRONTEND) $(wildcard obj/frontend/*.o) -o bin/sttptime.exe
 	@echo ==== COMPILED  STTPTIME FRONTEND ====
 
