@@ -11,13 +11,11 @@ int main(void){
     for(Item i_ : i.items){
       if(IsAppRunning(std::string(i_.name))){
         i_.time_played++;
-        printf("%s running! new time is %d\n", i_.name, i_.time_played);
-
-        // Update time
         i.UpdateTime(i_.name, i_.time_played);
-        i.UpdateVector();
+        break;
       }
     }
+    i.UpdateVector();
     Sleep(1000);
   }
 }
