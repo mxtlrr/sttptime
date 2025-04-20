@@ -13,3 +13,5 @@ typedef struct Item {
 
 void AddGame(std::string filename, std::string game_name);
 Item GetGameData(std::string filename, std::string name);
+
+std::vector<Item> get_all_games(std::string filename);
